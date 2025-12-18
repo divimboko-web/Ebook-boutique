@@ -1,0 +1,336 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Divi — Auteur & Créateur</title>
+  <meta name="description" content="Site vitrine de Divi : eBooks, projets, services et contact." />
+  <style>
+    :root{
+      --bg:#0b0b0f;
+      --card:#12121a;
+      --text:#f2f2f5;
+      --muted:#b7b7c2;
+      --gold:#d7b46a;
+      --gold2:#f0dc9a;
+      --line: rgba(215,180,106,.25);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --r: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 20% 0%, rgba(215,180,106,.18), transparent 60%),
+        radial-gradient(900px 700px at 80% 10%, rgba(240,220,154,.10), transparent 55%),
+        linear-gradient(180deg, #09090d, var(--bg));
+      line-height:1.55;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,11,15,.65);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:14px}
+    .brand{display:flex; align-items:center; gap:10px}
+    .dot{
+      width:12px; height:12px; border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, var(--gold2), var(--gold));
+      box-shadow: 0 0 20px rgba(215,180,106,.35);
+    }
+    .brand strong{letter-spacing:.4px}
+    .links{display:flex; gap:14px; flex-wrap:wrap; font-size:14px; color:var(--muted)}
+    .links a{padding:10px 12px; border-radius:12px}
+    .links a:hover{background:rgba(255,255,255,.05); color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:12px 16px; border-radius:14px;
+      border: 1px solid rgba(215,180,106,.35);
+      background: linear-gradient(180deg, rgba(215,180,106,.22), rgba(215,180,106,.12));
+      box-shadow: var(--shadow);
+      font-weight:600;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    header{padding:56px 0 28px}
+    .hero{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      padding:22px;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      color: var(--gold2);
+      background: rgba(215,180,106,.08);
+      font-size:13px;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(30px, 3.6vw, 48px);
+      line-height:1.1;
+      letter-spacing:.2px;
+    }
+    .lead{color:var(--muted); font-size:16px; max-width:60ch}
+    .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .ghost{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-weight:600;
+    }
+    .ghost:hover{background: rgba(255,255,255,.06)}
+    .statgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px}
+    @media (max-width: 520px){ .statgrid{grid-template-columns:1fr} }
+    .stat{padding:14px; border-radius:16px; border:1px solid rgba(255,255,255,.08); background: rgba(0,0,0,.18)}
+    .stat b{display:block; font-size:18px}
+    .stat span{color:var(--muted); font-size:13px}
+    section{padding:18px 0}
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    h2{margin:0 0 10px; font-size:22px}
+    .p{color:var(--muted); margin:0}
+    .tag{
+      display:inline-flex; padding:7px 10px; border-radius:999px;
+      border:1px solid rgba(215,180,106,.28);
+      background: rgba(215,180,106,.08);
+      color: var(--gold2); font-size:12px;
+    }
+    .quote{
+      font-family: "Palatino Linotype", Palatino, Georgia, serif;
+      font-style: italic;
+      color: var(--gold2);
+      border-left: 2px solid rgba(215,180,106,.45);
+      padding-left:14px;
+      margin:0;
+    }
+    .footer{
+      padding:30px 0 50px;
+      color:var(--muted);
+      border-top: 1px solid rgba(255,255,255,.06);
+      margin-top: 22px;
+      font-size:14px;
+    }
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    @media (max-width: 900px){ .split{grid-template-columns:1fr} }
+    label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      color:var(--text);
+      outline:none;
+    }
+    input:focus, textarea:focus{border-color: rgba(215,180,106,.55)}
+    textarea{min-height:120px; resize:vertical}
+    .small{font-size:12px; color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Retour en haut">
+        <span class="dot"></span>
+        <strong>Divi</strong>
+      </a>
+      <nav class="links" aria-label="Navigation">
+        <a href="#apropos">À propos</a>
+        <a href="#offres">Offres</a>
+        <a href="#temoignages">Témoignages</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn" href="#contact">Me contacter</a>
+    </div>
+  </div>
+
+  <main id="top" class="wrap">
+    <header>
+      <div class="hero">
+        <div class="card">
+          <span class="kicker">✨ Auteur • eBooks • Projets digitaux</span>
+          <h1>Des récits vrais, utiles, et élégants — pour avancer.</h1>
+          <p class="lead">
+            Ici, je présente mes livres, mes projets, et mes services (écriture, mise en page,
+            aide à la publication). Style sobre, ambiance dorée, et une seule idée : progresser.
+          </p>
+
+          <div class="actions">
+            <a class="btn" href="#offres">Voir mes offres</a>
+            <a class="ghost" href="#apropos">Découvrir mon parcours</a>
+          </div>
+
+          <div class="statgrid" role="list" aria-label="Chiffres clés">
+            <div class="stat" role="listitem"><b>eBooks</b><span>Gumroad • Amazon KDP</span></div>
+            <div class="stat" role="listitem"><b>1 page</b><span>Rapide • Moderne • Responsive</span></div>
+            <div class="stat" role="listitem"><b>Contact</b><span>Mail + formulaire</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Citation</h2>
+          <p class="quote">« Longtemps jugé, toujours debout. »</p>
+          <p class="p" style="margin-top:12px">
+            Une phrase qui résume un état d’esprit : garder sa dignité, se relever, et construire.
+          </p>
+
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap">
+            <span class="tag">Écriture</span>
+            <span class="tag">Édition</span>
+            <span class="tag">Reconstruction</span>
+            <span class="tag">Business digital</span>
+          </div>
+
+          <div style="margin-top:16px; border-top:1px solid rgba(255,255,255,.06); padding-top:14px">
+            <p class="small">
+              Astuce : remplace “Divi” par ton nom complet, et ajoute tes liens Gumroad/Amazon.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="apropos">
+      <div class="card">
+        <h2>À propos</h2>
+        <p class="p">
+          Je crée des contenus (eBooks, guides, textes) axés sur le réel : jugement des autres, résilience,
+          trajectoires pro, et reconstruction. Mon objectif : transformer l’expérience en structure claire,
+          belle, et exploitable.
+        </p>
+      </div>
+    </section>
+
+    <section id="offres">
+      <div class="grid">
+        <div class="card">
+          <h2>📘 Mes eBooks</h2>
+          <p class="p">Présentation de tes titres + boutons d’achat (Gumroad / Amazon).</p>
+          <div class="actions" style="margin-top:14px">
+            <a class="ghost" href="#" onclick="alert('Ajoute ici ton lien Gumroad/Amazon 😊');return false;">Voir la boutique</a>
+          </div>
+        </div>
+        <div class="card">
+          <h2>🧩 Services</h2>
+          <p class="p">Mise en page, correction, conversion (PDF/KDP/ePub), texte de vente.</p>
+          <div class="actions" style="margin-top:14px">
+            <a class="ghost" href="#contact">Demander un devis</a>
+          </div>
+        </div>
+        <div class="card">
+          <h2>🚀 Accompagnement</h2>
+          <p class="p">Stratégie publication + optimisation page produit + plan de lancement.</p>
+          <div class="actions" style="margin-top:14px">
+            <a class="ghost" href="#contact">En parler</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="temoignages">
+      <div class="grid">
+        <div class="card">
+          <h2>Témoignage</h2>
+          <p class="quote">« Clair, apaisant, et très structuré. On sent une vraie profondeur. »</p>
+          <p class="small" style="margin-top:10px">— Lecteur</p>
+        </div>
+        <div class="card">
+          <h2>Témoignage</h2>
+          <p class="quote">« Une présentation élégante, et des conseils concrets. »</p>
+          <p class="small" style="margin-top:10px">— Client</p>
+        </div>
+        <div class="card">
+          <h2>Témoignage</h2>
+          <p class="quote">« On avance page après page, sans pression, mais avec précision. »</p>
+          <p class="small" style="margin-top:10px">— Lecteur</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="card">
+        <div class="split">
+          <div>
+            <h2>Contact</h2>
+            <p class="p">
+              Dis-moi ce que tu veux (site, eBook, mise en page, pub Amazon). Je te réponds par mail.
+            </p>
+            <div class="actions" style="margin-top:14px">
+              <a class="btn" href="mailto:tonmail@exemple.com?subject=Contact%20depuis%20le%20site&body=Bonjour%20Divi,%0D%0A%0D%0A">
+                Envoyer un email
+              </a>
+            </div>
+            <p class="small" style="margin-top:10px">
+              Remplace <b>tonmail@exemple.com</b> par ton vrai email.
+            </p>
+          </div>
+
+          <form onsubmit="return handleSubmit(event)">
+            <label for="name">Nom</label>
+            <input id="name" name="name" placeholder="Ton nom" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="tonmail@exemple.com" required />
+
+            <label for="msg">Message</label>
+            <textarea id="msg" name="msg" placeholder="Écris ton message..." required></textarea>
+
+            <div class="actions" style="margin-top:14px">
+              <button class="btn" type="submit">Préparer l’email</button>
+              <button class="ghost" type="reset">Effacer</button>
+            </div>
+            <p class="small" style="margin-top:10px">
+              Le formulaire n’envoie rien automatiquement : il ouvre ton client mail avec le message.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div class="wrap" style="padding:0">
+        © <span id="y"></span> Divi — Tous droits réservés.
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const msg = document.getElementById("msg").value.trim();
+
+      const subject = encodeURIComponent("Contact depuis le site");
+      const body = encodeURIComponent(
+        `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${msg}\n`
+      );
+
+      // Remplace par ton email réel :
+      const to = "tonmail@exemple.com";
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      return false;
+    }
+  </script>
+</body>
+</html>
